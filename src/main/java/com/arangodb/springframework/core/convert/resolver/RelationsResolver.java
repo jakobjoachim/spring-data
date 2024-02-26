@@ -96,7 +96,7 @@ public class RelationsResolver extends AbstractResolver<Relations> implements Re
 		}
 
 		final String query = String.format(
-				"%s FOR v IN %d .. %d %s @start %s OPTIONS {bfs: true, uniqueVertices: %s} %s RETURN v", //
+				"%s FOR v IN %d .. %d %s @start %s OPTIONS {bfs: true, uniqueVertices: \"%s\"} %s RETURN v", //
 				withClause, //
 				Math.max(1, annotation.minDepth()), //
 				Math.max(1, annotation.maxDepth()), //
