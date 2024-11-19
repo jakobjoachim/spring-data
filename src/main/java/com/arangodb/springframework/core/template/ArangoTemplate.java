@@ -511,6 +511,7 @@ public class ArangoTemplate implements ArangoOperations, CollectionCallback, App
             final Collection<String> keys = new ArrayList<>();
             ids.forEach(id -> keys.add(determineDocumentKeyFromId(id)));
 			boolean transactional = options != null && options.getStreamTransactionId() != null;
+            // TODO: hier fehlt transactional
 			Collection<T> docs = _collection(entityClass, transactional).getDocuments(keys, entityClass).getDocuments();
             for (T doc : docs) {
                 if (doc != null) {
